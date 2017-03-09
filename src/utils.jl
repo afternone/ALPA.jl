@@ -43,11 +43,9 @@ end
 function modularity(g, c)
     labels = unique(c)
     length(labels) == 1 && return 0.0
-    no_of_edges = ne(g)
-    m = 0
+    m = ne(g)
     e = Dict{Int,Int}()
     a = Dict{Int,Int}()
-    m = no_of_edges
     for u in nodes(g)
         for v in neighbors(g,u)
             if u<v

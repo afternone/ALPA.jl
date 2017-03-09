@@ -2,7 +2,7 @@ using ParserCombinator: Parsers.GML
 
 function _gml_read_one_graph(gs)
     nodes = [x[:id] for x in gs[:node]]
-    g = Graph{Int,Int}()
+    g = Graph()
     sds = [(Int(x[:source]), Int(x[:target])) for x in gs[:edge]]
     for (s,d) in (sds)
         addedge!(g, s, d)
