@@ -153,8 +153,11 @@ function lpa_deletenode!(g, m, c, u, active_nodes, random_order, node_status)
         empty!(active_nodes)
         u_comm = m[u]
         delnode!(g, u)
-        delete!(m, u)
-        #m[u] = 0
+        if typeof(m) <: Dict
+            delete!(m, u)
+        else
+            m[u] = 0
+        end
         node_status.neigh_last = 0
         for v in nodes(g)
             if m[v] == u_comm
