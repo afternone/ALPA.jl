@@ -2,7 +2,7 @@ module ALPA
 using StatsBase
 
 export addnode!, delnode!, addedge!, deledge!, ne,
-    lpa_addnode!, lpa_deletenode!, lpa_addedge!, lpa_deleteedge!, loadgml, savegml, modularity, graphdiff, Graph, NeighComm, NodeStatus
+    lpa_addnode!, lpa_deletenode!, lpa_addedge!, lpa_deleteedge!, loadgml, savegml, modularity, graphdiff, Graph, NeighComm, NodeStatus, getctnf
 # package code goes here
 include("wgraph.jl")
 include("wevolve.jl")
