@@ -1,11 +1,11 @@
 """Type to record neighbor labels and their counts."""
-type NeighComm
+mutable struct NeighComm
     neigh_pos::Vector{Int}
     neigh_cnt::Vector{Int}
     neigh_last::Int
 end
 
-type NodeStatus
+mutable struct NodeStatus
     neigh_pos::Vector{Int}
     neigh_cnt::Vector{Bool}
     neigh_last::Int
@@ -13,7 +13,7 @@ end
 
 function range_shuffle!(r, a::AbstractVector)
     @inbounds for i=r:-1:2
-        j = StatsBase.randi(i)
+        j = rand(1:i)
         a[i],a[j] = a[j],a[i]
     end
 end
