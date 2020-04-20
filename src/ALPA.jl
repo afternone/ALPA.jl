@@ -12,9 +12,9 @@ include("utils.jl")
 N = 10000
 c = NeighComm(collect(1:N), fill(-1,N), 1)
 ns = NodeStatus(collect(1:N), fill(false,N), 1)
-random_order = Array(Int,N)
+random_order = Array{Int}(undef,N)
 #m = zeros(Int,N)
-a = IntSet()
+a = Set{Int}()
 
 lpa_deletenode!(g, m, u) = lpa_deletenode!(g, m, c, u, a, random_order, ns)
 
