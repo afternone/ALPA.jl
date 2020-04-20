@@ -1,8 +1,21 @@
 module ALPA
     using StatsBase
 
-    export addnode!, delnode!, addedge!, deledge!, ne,
-        lpa_addnode!, lpa_deletenode!, lpa_addedge!, lpa_deleteedge!, loadgml, savegml, modularity, graphdiff, Graph, NeighComm, NodeStatus, getctnf
+
+export addnode!, delnode!, addedge!, deledge!, ne,
+    lpa_addnode!, lpa_deletenode!, lpa_addedge!, lpa_deleteedge!, loadgml, savegml, modularity, graphdiff, Graph, NeighComm, NodeStatus, getctnf
+# package code goes here
+include("wgraph.jl")
+include("wevolve.jl")
+include("graphio.jl")
+include("utils.jl")
+# package code goes here
+N = 10000
+c = NeighComm(collect(1:N), fill(-1,N), 1)
+ns = NodeStatus(collect(1:N), fill(false,N), 1)
+random_order = Array{Int}(undef,N)
+#m = zeros(Int,N)
+a = Set{Int}()
 
     # package code goes here
     include("wgraph.jl")
