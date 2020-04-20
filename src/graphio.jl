@@ -1,4 +1,4 @@
-using ParserCombinator: Parsers.GML
+#using ParserCombinator: Parsers.GML
 
 function _gml_read_one_graph(gs)
     nodes = [x[:id] for x in gs[:node]]
