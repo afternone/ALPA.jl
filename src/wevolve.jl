@@ -13,7 +13,7 @@ end
 
 function range_shuffle!(r, a::AbstractVector)
     @inbounds for i=r:-1:2
-        j = StatsBase.rand(1:i)
+        j = rand(1:i)
         a[i],a[j] = a[j],a[i]
     end
 end

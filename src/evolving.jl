@@ -1,11 +1,11 @@
 """Type to record neighbor labels and their counts."""
-type NeighComm
+mutable struct NeighComm
     neigh_pos::Vector{Int}
     neigh_cnt::Vector{Int}
     neigh_last::Int
 end
 
-type NodeStatus
+mutable struct NodeStatus
     neigh_pos::Vector{Int}
     neigh_cnt::Vector{Bool}
     neigh_last::Int
