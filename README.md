@@ -7,7 +7,7 @@
 ```
 ## Usage
 ### non-interactive mode
-1. Prepare a dynamic network file `tiny_dyn_net.txt` with each line represents a graph event as follows:
+1. Prepare a dynamic network file (e.g. `tiny_dyn_net.txt`) with each line represents a graph event as follows:
 ```
 + 1 # add new node "1"
 + 2 # add new node "2"
@@ -24,7 +24,7 @@
 - 3 6
 - 1 # delete the node "1"
 ```
-2. Change to the `src` directory and open terminal from there, and then using the following command to run ALPA on the dynamic network file.
+2. Change to the `src` directory and open terminal from there (don't forget to add Julia to the environment variables `PATH`), and then using the following command to run ALPA on the dynamic network file.
 ```
 julia main.jl tiny_dyn_net.txt
 ```
